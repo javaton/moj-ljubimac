@@ -1,10 +1,12 @@
 package zivotinje;
 
+import greska.GreskaAplikacije;
+
 public class Ribica extends KucniLjubimac {
 
 	private Boolean zlatna;
 
-	public Ribica(String naziv, Boolean dlaka, Boolean zlatna) {
+	public Ribica(String naziv, Boolean dlaka, Boolean zlatna) throws GreskaAplikacije {
 		super(naziv, dlaka);
 		this.zlatna = zlatna;
 	}

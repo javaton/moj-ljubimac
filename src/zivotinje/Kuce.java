@@ -1,5 +1,6 @@
 package zivotinje;
 
+import greska.GreskaAplikacije;
 import zivotinje.briga.Setnja;
 
 public class Kuce extends KucniLjubimac implements Setnja{
@@ -7,7 +8,7 @@ public class Kuce extends KucniLjubimac implements Setnja{
 	private String rasa;
 	private Boolean pedigre;
 	
-	public Kuce(String naziv, Boolean dlaka, String rasa, Boolean pedigre) {
+	public Kuce(String naziv, Boolean dlaka, String rasa, Boolean pedigre) throws GreskaAplikacije {
 		super(naziv, dlaka);
 		this.rasa = rasa;
 		this.pedigre = pedigre;

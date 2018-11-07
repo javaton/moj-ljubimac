@@ -1,10 +1,12 @@
 package zivotinje;
 
+import greska.GreskaAplikacije;
+
 public class Hrcak extends KucniLjubimac {
 
 	private String boja;
 
-	public Hrcak(String naziv, Boolean dlaka, String boja) {
+	public Hrcak(String naziv, Boolean dlaka, String boja) throws GreskaAplikacije {
 		super(naziv, dlaka);
 		this.boja = boja;
 	}

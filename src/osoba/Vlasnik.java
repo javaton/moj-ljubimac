@@ -8,6 +8,15 @@ import zivotinje.briga.Setnja;
 
 public class Vlasnik {
 
+	public void staviOgrlicu(KucniLjubimac kucniLjubimac) {
+		try {
+			Kuce pas = (Kuce) kucniLjubimac;
+			System.out.println("Stavljena je ogrlica na " + pas.getNaziv());
+		} catch(ClassCastException e) {
+			System.out.println("ne moze da stavite ogrlicu na ljubimca!");
+		}
+	}
+
 	public void setaj(Setnja setnja) {
 		Kuce kuce = (Kuce) setnja;
 //		Hrcak h = (Hrcak) setnja;
