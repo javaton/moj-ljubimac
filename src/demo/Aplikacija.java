@@ -22,8 +22,31 @@ public class Aplikacija {
 			vlasnik.brigaOLjubimcu(ker);
 			vlasnik.brigaOLjubimcu(ribica);
 			
-			vlasnik.staviOgrlicu(ribica);
-			Kuce zuca  = new Kuce(null, true, "doz", false);
+//			vlasnik.staviOgrlicu(ribica);
+			KucniLjubimac pas = new Kuce("Zuca", true, "DOC", false);
+
+			//Dodavanje kucnih ljubimaca vlasniku 
+			vlasnik.dodajLjubimca(ker);
+			vlasnik.dodajLjubimca(ribica);
+			try {
+			vlasnik.dodajLjubimca(ribica);
+			} catch (GreskaAplikacije e) {
+				System.out.println(e.getMessage());
+			}
+			try {
+				vlasnik.dodajLjubimca(ribica);
+				} catch (GreskaAplikacije e) {
+					System.out.println(e.getMessage());
+				}
+
+//			vlasnik.dodajLjubimca(pas);
+			
+			vlasnik.ukloniLjubimca(pas);
+			vlasnik.ukloniLjubimca(pas);
+
+			vlasnik.ukloniLjubimca(pas);
+
+//			Kuce zuca  = new Kuce(null, true, "doz", false);
 		} catch (GreskaAplikacije e) {
 			System.out.println(e.getMessage());
 		}

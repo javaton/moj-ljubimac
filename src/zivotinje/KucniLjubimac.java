@@ -16,6 +16,15 @@ public abstract class KucniLjubimac implements BrigaOLjubimcu{
 		this.naziv = naziv;
 		this.dlaka = dlaka;
 	}
+	
+//	public abstract void nahrani();
+//	public abstract void ocisti();
+//	
+//	@Override
+//	public void negaOLjubimcu() {
+//		nahrani();
+//		ocisti();
+//	}
 
 	public String getNaziv() {
 		return naziv;
@@ -32,4 +41,5 @@ public abstract class KucniLjubimac implements BrigaOLjubimcu{
 	public void setDlaka(Boolean dlaka) {
 		this.dlaka = dlaka;
 	}
+
 }

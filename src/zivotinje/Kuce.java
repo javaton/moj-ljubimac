@@ -1,7 +1,7 @@
 package zivotinje;
 
 import greska.GreskaAplikacije;
-import zivotinje.briga.Setnja;
+import zivotinje.briga.*;
 
 public class Kuce extends KucniLjubimac implements Setnja{
 

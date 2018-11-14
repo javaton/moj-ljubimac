@@ -1,5 +1,9 @@
 package osoba;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import greska.GreskaAplikacije;
 import zivotinje.Hrcak;
 import zivotinje.Kuce;
 import zivotinje.KucniLjubimac;
@@ -7,6 +11,38 @@ import zivotinje.briga.BrigaOLjubimcu;
 import zivotinje.briga.Setnja;
 
 public class Vlasnik {
+	
+	private List<KucniLjubimac> mojiLjubimci;
+
+	public Vlasnik() {
+		super();
+		this.mojiLjubimci = new ArrayList<>();
+	}
+	
+	public void dodajLjubimca(KucniLjubimac ljubimac) throws GreskaAplikacije {
+		if(mojiLjubimci.isEmpty()) {
+			mojiLjubimci.add(ljubimac);
+		} else {
+			for(KucniLjubimac k : mojiLjubimci) {
+				if(k.getNaziv().equals(ljubimac.getNaziv())) {
+					throw new GreskaAplikacije("Postoji kucni ljubimac sa imenom " + ljubimac.getNaziv());
+				} 
+			}
+			mojiLjubimci.add(ljubimac);
+		}
+		
+	}
+	
+	public void ukloniLjubimca(KucniLjubimac ljubimac) throws GreskaAplikacije {
+		if(mojiLjubimci.isEmpty()) {
+			throw new GreskaAplikacije("Nemas ljubimce");
+		}
+		if(!mojiLjubimci.contains(ljubimac)) {
+			throw new GreskaAplikacije("Ljubimac ne postoji u Listi");
+		}
+		mojiLjubimci.remove(ljubimac);
+		System.out.println("Uspesno uklonjen ljubimac " + ljubimac.getNaziv());
+	}
 
 	public void staviOgrlicu(KucniLjubimac kucniLjubimac) {
 		try {
@@ -15,13 +51,14 @@ public class Vlasnik {
 		} catch(ClassCastException e) {
 			System.out.println("ne moze da stavite ogrlicu na ljubimca!");
 		}
+		
 	}
 
-	public void setaj(Setnja setnja) {
-		Kuce kuce = (Kuce) setnja;
+	public void setaj(Setnja setajLjubimca) {
+		Kuce pas = (Kuce) setajLjubimca;
 //		Hrcak h = (Hrcak) setnja;
-		System.out.println("Setam " + kuce.getNaziv() + " "+ 
-					setnja.preporucenoVremeZabave() +
+		System.out.println("Setam " + pas.getNaziv() + " "+ 
+				setajLjubimca.preporucenoVremeZabave() +
 					" minuta dnevno");
 	}
 	
